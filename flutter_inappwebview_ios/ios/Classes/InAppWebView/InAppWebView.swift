@@ -2291,7 +2291,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
             _ in completionHandler()}
         )
         
-        guard let presentingViewController = inAppBrowserDelegate != nil ? inAppBrowserDelegate as? InAppBrowserWebViewController : window?.rootViewController else {
+        guard let presentingViewController = inAppBrowserDelegate != nil ? inAppBrowserDelegate as? InAppBrowserWebViewController : UIApplication.shared.rootViewController else {
             completionHandler()
             return
         }
@@ -2363,7 +2363,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
             completionHandler(false)
         }))
         
-        guard let presentingViewController = inAppBrowserDelegate != nil ? inAppBrowserDelegate as? InAppBrowserWebViewController : window?.rootViewController else {
+        guard let presentingViewController = inAppBrowserDelegate != nil ? inAppBrowserDelegate as? InAppBrowserWebViewController : UIApplication.shared.rootViewController else {
             completionHandler(false)
             return
         }
@@ -2443,7 +2443,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
             completionHandler(nil)
         }))
         
-        guard let presentingViewController = inAppBrowserDelegate != nil ? inAppBrowserDelegate as? InAppBrowserWebViewController : window?.rootViewController else {
+        guard let presentingViewController = inAppBrowserDelegate != nil ? inAppBrowserDelegate as? InAppBrowserWebViewController : UIApplication.shared.rootViewController else {
             completionHandler(nil)
             return
         }

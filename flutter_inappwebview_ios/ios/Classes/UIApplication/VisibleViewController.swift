@@ -8,9 +8,16 @@
 import UIKit
 
 extension UIApplication {
-
+    var rootViewController: UIViewController? {
+        return self
+            .connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .flatMap({ $0.windows })
+            .first(where: { $0.isKeyWindow })?
+            .rootViewController
+    }
     var visibleViewController: UIViewController? {
-        guard let rootViewController = keyWindow?.rootViewController else {
+        guard let rootViewController = self.rootViewController else {
             return nil
         }
         return getVisibleViewController(rootViewController)
